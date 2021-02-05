@@ -1,0 +1,20 @@
+<form [formGroup]="form">
+	<mat-form-field class="full-width">
+		<mat-select placeholder="Projects" formControlName="project" multiple
+			(selectionChange)="OnSelectChanged($event)" #matSelect>
+			<app-select-check-all [model]="form.get('project')" [values]="projects">
+			</app-select-check-all>
+      <mat-option *ngFor="let project of projects" [value]="project">{{ project.name }}</mat-option>
+      <hr>
+      <!-- Global overried for .mat-select-panel max-height at style.css -->
+			<div class="row no-gutters pb-1">
+				<div class="col-sm-6 text-right pr-2">
+					<button type="button" class="btn btn-primary" (click)="okClicked()">Ok</button>
+				</div>
+				<div class="col-sm-6 text-right  pr-2">
+					<button type="button" class="btn btn-danger" (click)="cancelClicked()">Cancel</button>
+				</div>
+			</div>
+		</mat-select>
+	</mat-form-field>
+</form>

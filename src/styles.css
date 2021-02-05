@@ -1,0 +1,9 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+.mat-select-panel {
+  max-height: unset !important;
+}
+
+body{
+    font-family: Roboto;
+}
